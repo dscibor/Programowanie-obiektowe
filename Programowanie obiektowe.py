@@ -1,12 +1,3 @@
-# class Dlugopis:
-#     def __init__(self, waga, wysokosc, srednica ,kolor ,kolor_w, cena):
-#         self.waga = 15
-#         self.wysokosc = 12
-#         self.srednica = 1
-#         self.kolor = pomaranczowy
-#         self.kolor_w = niebieski
-#         self.cena = 1.20
-
 class Zwierze:
     def __init__(self, gatunek = "", imie = "", wiek = 0):
         self.gatunek = gatunek
@@ -16,7 +7,6 @@ class Zwierze:
     def dodaj_gatunek(self, gatunek):
         gatunek = input("Podaj gatunek: ")
         
-
     def dodaj_imie(self, imie):
         imie = input("Podaj imie: ")
 
