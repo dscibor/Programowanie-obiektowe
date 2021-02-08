@@ -1,19 +1,6 @@
-def get_zwierzaki_from_file(filename):
-    zwierzaki = []
-    with open("filename.txt", 'r') as file:
-        for line in file:
-            l = line.rstrip('\n')
-            lista_slow = l.split(' ') 
-            gatunek = lista_slow[0]
-            imie = lista_slow[1]
-            wiek = lista_slow[2]
-    return zwierzaki
 
-def save_zwierzaki_to_file(filename, zwierzaki):
-    with open("filename.txt", 'w') as file:
-        for zwierzak in zwierzaki:
-            file.write('{} {} {}\n'.format(zwierzak.gatunek, zwierzak.imie, zwierzak.wiek))
-                
+filename = "filename.txt"
+
 class Zwierze:
     def __init__(self, gatunek = "", imie = "", wiek = 0):
         self.gatunek = gatunek
@@ -32,13 +19,41 @@ class Zwierze:
     def zwierzak(self):
         print(self.gatunek, self.imie, self.wiek)
 
+def get_zwierzaki_from_file(filename):
+    zwierzaki = []
+    with open("filename.txt", 'r') as file:
+        for line in file:
+            l = line.rstrip('\n')
+            lista_slow = l.split(' ') 
+            gatunek = lista_slow[0]
+            imie = lista_slow[1]
+            wiek = lista_slow[2]
+            zwierzak = Zwierze(gatunek, imie, wiek)
+            zwierzaki.append(zwierzak)
+    return zwierzaki
+
+def save_zwierzaki_to_file(filename, zwierzaki):
+    with open("filename.txt", 'w') as file:
+        for zwierzak in zwierzaki:
+            file.write('{} {} {}\n'.format(zwierzak.gatunek, zwierzak.imie, zwierzak.wiek))
+
+zwierzaki = get_zwierzaki_from_file(filename)
+
+for element in zwierzaki:
+    print(element.gatunek, element.imie, element.wiek)
+
+print("\n")
 print("Dodaj zwierzę")
 gatunek = input("Podaj gatunek zwierzęcia: ")
 imie = input("Podaj imię zwierzęcia: ")
 wiek = input("Podaj wiek zwierzęcia: ")
 zwierzak = Zwierze(gatunek, imie ,wiek)
+zwierzaki.append(zwierzak)
 print(zwierzak.gatunek, zwierzak.imie, zwierzak.wiek)
 
+save_zwierzaki_to_file(filename, zwierzaki)
+
+    
 
 
 
