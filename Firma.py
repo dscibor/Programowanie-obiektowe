@@ -29,7 +29,26 @@ class Employee(Human):
     def ___str__(self):
         return str(self.__dict__)
 
-pracownik1 = Employee("Danuta", "Zdupy", 30, 1900.8, 21)
-pracownik2 = Employee("Zbigniew", "Zdupa", 35, 1910.9, 20, pracownik1)
-print(str(pracownik1.___str__()))
-print(pracownik1.oblicz_pensje_roczna())
+class Business:
+    def __init__(self, nazwa:str, branza:str, lista_pracownikow:list):
+        self.nazwa = nazwa
+        self.branza = branza
+        self.lista_pracownikow = lista_pracownikow
+
+        
+    def dodaj_pracownika(self, pracownik:Employee):
+        self.lista_pracownikow.append(pracownik)
+
+    def usun_pracownika_o_numerze(self, pracownik):
+        pass
+    def usun_pracownika(self, lista_pracownikow):
+        pass
+    def policz_pracownikow(self, lista_pracownikow):
+        pass
+
+    
+
+
+
+
+
